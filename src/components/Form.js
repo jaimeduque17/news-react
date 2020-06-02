@@ -1,5 +1,5 @@
 import React from 'react';
-import useSelect from './hooks/useSelect';
+import useSelect from '../hooks/useSelect';
 import styles from './Form.module.css';
 
 // JS don't accept class names with hyphen with module sintax. example: btn-block' so the way to use that is ['btn-block']
