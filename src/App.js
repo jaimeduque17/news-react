@@ -13,7 +13,8 @@ function App() {
     const API = async () => {
 
       const country = 'co';
-      const url = `http://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=`;
+      const apiKey = '';
+      const url = `http://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`;
 
       const response = await fetch(url);
       const news = await response.json();
