@@ -4,7 +4,7 @@ import styles from './Form.module.css';
 
 // JS don't accept class names with hyphen with module sintax. example: btn-block' so the way to use that is ['btn-block']
 
-const Form = () => {
+const Form = ({setCategory}) => {
 
     const OPTIONS = [
         {value: 'general', label: 'General'},
@@ -19,10 +19,18 @@ const Form = () => {
     // use custom hook
     const [category, NewsSelect] = useSelect('general', OPTIONS);
 
+    // form submit
+    const searchNews = (e) => {
+        e.preventDefault();
+        setCategory(category);
+    }
+
     return (  
         <div className={`${styles.searcher} row`}>
             <div className="col s12 m8 offset-m2">
-                <form>
+                <form
+                    onSubmit={searchNews}
+                >
                     <h2 className={styles.heading}>Find News by Category</h2>
                     <NewsSelect />
                     <div className="input-field col s12">
